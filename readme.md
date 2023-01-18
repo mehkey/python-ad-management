@@ -111,9 +111,9 @@ Create a new campaign.
   - "name": "string" 
   - "targeting_criteria": "string"
   - "ads": 
-   - "title": "string"
-   - "image_url": "string"
-   - "destination_url": "string"
+    - "title": "string"
+    - "image_url": "string"
+    - "destination_url": "string"
 
 
 ### Example
