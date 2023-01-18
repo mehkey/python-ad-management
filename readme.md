@@ -52,7 +52,7 @@ alembic downgrade -1
 
 export PYTHONPATH=$PWD
 
-``
+```
 
 
 
