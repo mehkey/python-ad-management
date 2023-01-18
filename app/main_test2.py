@@ -3,6 +3,7 @@ from fastapi.testclient import TestClient
 import unittest
 from app.main import app
 from fastapi import FastAPI
+import datetime
 
 class TestCreateAdCampaign(unittest.TestCase):
     def setUp(self):
