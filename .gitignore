@@ -13,6 +13,7 @@ build/
 /db-migrations3
 /fenv
 /fenv2
+/OLD
 alambic2.ini
 alambic1.ini
 develop-eggs/
