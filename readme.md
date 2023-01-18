@@ -106,24 +106,39 @@ Create a new campaign.
 - end_date: date *
 - budget: float *
 - advertiser_id: int *
+- status: string
+- ad_groups: 
+  - "name": "string" 
+  - "targeting_criteria": "string"
+  - "ads": 
+   - "title": "string"
+   - "image_url": "string"
+   - "destination_url": "string"
 
-### Responses
 
-- 201: Campaign created successfully
-- 400: Invalid request
-- 401: Unauthorized
-- 500: Internal Server Error
-
-
-## GET /campaigns
-
-Get all campaigns.
-
-### Responses
-
-- 200: OK
-- 401: Unauthorized
-- 500: Internal Server Error
+### Example
+```json
+{
+    "name": "Test Ad Campaign",
+    "start_date": "2022-01-01T00:00:00",
+    "end_date": "2022-12-31T23:59:59",
+    "budget": 1000.0,
+    "status": "CREATED",
+    "ad_groups": [
+        {
+            "name": "Test Ad Group",
+            "targeting_criteria": "Test targeting criteria",
+            "ads": [
+                {
+                    "title": "Test Ad",
+                    "image_url": "http://test-image-url.com",
+                    "destination_url": "http://test-destination-url.com"
+                }
+            ]
+        }
+    ]
+}
+```
 
 ## GET /campaigns/{id}
 
@@ -140,26 +155,33 @@ Get a campaign by ID.
 - 404: Campaign not found
 - 500: Internal Server Error
 
-## PUT /campaigns/{id}
 
-Update a campaign.
 
-### Path Parameters
-
-- id: int *
-
-### Request Body
-
-- name: string
-- start_date: date
-- end_date: date
-- budget: float
-
-### Responses
-
-- 200: Campaign updated successfully
-- 400: Invalid request
-- 401: Unauthorized
-- 404: Campaign not found
-- 500: Internal Server Error
-
+Example Result
+```json
+[
+    {
+        "id": 1,
+        "name": "Test Ad Campaign",
+        "start_date": "2022-01-01T00:00:00",
+        "end_date": "2022-12-31T23:59:59",
+        "budget": 1000.0,
+        "status": "CREATED",
+        "ad_groups": [
+            {
+                "id": 1,
+                "name": "Test Ad Group",
+                "targeting_criteria": "Test targeting criteria",
+                "ads": [
+                    {
+                        "id": 1,
+                        "title": "Test Ad",
+                        "image_url": "http://test-image-url.com",
+                        "destination_url": "http://test-destination-url.com"
+                    }
+                ]
+            }
+        ]
+    }
+]
+```
