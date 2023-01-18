@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app
+      POSTGRES_DB: admanagement
+    ports:
+      - 5431:5432
+
+  memcached:
+    image: memcached
+    ports:
+      - 11211:11211
+    environment:
+      - MEMCACHED_MAX_CONNECTIONS=1024
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8090:8080
