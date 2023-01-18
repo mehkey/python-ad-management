@@ -9,6 +9,8 @@ __pycache__/
 # Distribution / packaging
 .Python
 build/
+/db-migrations2
+alambic2.ini
 develop-eggs/
 dist/
 downloads/
