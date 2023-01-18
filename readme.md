@@ -53,3 +53,39 @@ alembic downgrade -1
 export PYTHONPATH=$PWD
 
 ``
+
+
+
+## Users
++ `id`: a unique identifier for each user, this field is the primary key and is of type `SERIAL`.
++ `username`: a text field that stores the username of the user, this field is unique and is of type `VARCHAR(255)`.
++ `email`: a text field that stores the email of the user, this field is unique and is of type `VARCHAR(255)`.
++ `password_hash`: a text field that stores the hashed password of the user, this field is of type `VARCHAR(255)`.
+
+## Advertisers
++ `id`: a unique identifier for each advertiser, this field is the primary key and is of type `SERIAL`.
++ `name`: a text field that stores the name of the advertiser, this field is of type `VARCHAR(255)`.
++ `email`: a text field that stores the email of the advertiser, this field is of type `VARCHAR(255)`.
++ `phone_number`: a text field that stores the phone number of the advertiser, this field is of type `VARCHAR(255)`.
+
+## AdCampaigns
++ `id`: a unique identifier for each ad campaign, this field is the primary key and is of type `SERIAL`.
++ `name`: a text field that stores the name of the ad campaign, this field is of type `VARCHAR(255)`.
++ `start_date`: a date field that stores the start date of the ad campaign, this field is of type `DATE`.
++ `end_date`: a date field that stores the end date of the ad campaign, this field is of type `DATE`.
++ `budget`: a float field that stores the budget of the ad campaign, this field is of type `FLOAT`.
++ `advertiser_id`: a foreign key that references the advertiser who created the ad campaign, this field is of type `INTEGER` and references the `id` field of the `Advertisers` table.
++ `status`: a text field that stores the current status of the ad campaign (e.g. "created", "running", "finished"), this field is of type `VARCHAR(255)`.
+
+## AdGroups
++ `id`: a unique identifier for each ad group, this field is the primary key and is of type `SERIAL`.
++ `name`: a text field that stores the name of the ad group, this field is of type `VARCHAR(255)`.
++ `targeting_criteria`: a text field that stores the targeting criteria for the ad group, this field is of type `VARCHAR(255)`.
++ `ad_campaign_id`: a foreign key that references the ad campaign that the ad group belongs to, this field is of type `INTEGER` and references the `id` field of the `AdCampaigns` table.
+
+## Ads
++ `id`: a unique identifier for each ad, this field is the primary key and is of type SERIAL.
++ `title`: a text field that stores the title of the ad, this field is of type VARCHAR(255).
++ `image_url`: a text field that stores the URL of the ad's image, this field is of type VARCHAR(255).
++ `destination_url`: a text field that stores the URL that the ad should redirect to when clicked, this field is of type VARCHAR(255).
++ `ad_group_id`: a foreign key that references the ad group that the ad belongs to, this field is of type INTEGER and references the id field of the AdGroups table.
