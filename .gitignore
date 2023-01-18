@@ -11,6 +11,8 @@ __pycache__/
 build/
 /db-migrations2
 /db-migrations3
+/fenv
+/fenv2
 alambic2.ini
 alambic1.ini
 develop-eggs/
