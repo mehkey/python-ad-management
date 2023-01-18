@@ -30,6 +30,7 @@ The easiest way to get started with the api is to head over to the docs generate
 
 
 
+## Useful commands
 
 ```
 python3 -m venv fenv
@@ -55,6 +56,7 @@ export PYTHONPATH=$PWD
 ```
 
 
+# Schema
 
 ## Users
 + `id`: a unique identifier for each user, this field is the primary key and is of type `SERIAL`.
@@ -89,3 +91,75 @@ export PYTHONPATH=$PWD
 + `image_url`: a text field that stores the URL of the ad's image, this field is of type VARCHAR(255).
 + `destination_url`: a text field that stores the URL that the ad should redirect to when clicked, this field is of type VARCHAR(255).
 + `ad_group_id`: a foreign key that references the ad group that the ad belongs to, this field is of type INTEGER and references the id field of the AdGroups table.
+
+
+# API
+
+## POST /campaigns
+
+Create a new campaign.
+
+### Request Body
+
+- name: string *
+- start_date: date *
+- end_date: date *
+- budget: float *
+- advertiser_id: int *
+
+### Responses
+
+- 201: Campaign created successfully
+- 400: Invalid request
+- 401: Unauthorized
+- 500: Internal Server Error
+
+
+## GET /campaigns
+
+Get all campaigns.
+
+### Responses
+
+- 200: OK
+- 401: Unauthorized
+- 500: Internal Server Error
+
+## GET /campaigns/{id}
+
+Get a campaign by ID.
+
+### Path Parameters
+
+- id: int *
+
+### Responses
+
+- 200: OK
+- 401: Unauthorized
+- 404: Campaign not found
+- 500: Internal Server Error
+
+## PUT /campaigns/{id}
+
+Update a campaign.
+
+### Path Parameters
+
+- id: int *
+
+### Request Body
+
+- name: string
+- start_date: date
+- end_date: date
+- budget: float
+
+### Responses
+
+- 200: Campaign updated successfully
+- 400: Invalid request
+- 401: Unauthorized
+- 404: Campaign not found
+- 500: Internal Server Error
+
