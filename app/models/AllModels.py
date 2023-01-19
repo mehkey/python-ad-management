@@ -13,22 +13,6 @@ from app.database import Base
 from sqlalchemy import func
 
 
-'''
-class Player(Base):
-    __tablename__ = 'player'
-
-    id = sa.Column('id', sa.Integer, primary_key=True)
-    name = sa.Column('name', sa.String(100), nullable=False)
-    queue_id = sa.Column('queue_id', sa.Integer, sa.ForeignKey('queue.id'), nullable=False)
-    status = sa.Column('status', sa.String(50), nullable=False)
-    match_id = sa.Column('match_id', sa.Integer, sa.ForeignKey('match.id'))
-    join_time = sa.Column('join_time', sa.DateTime, server_default=func.now())
-    attributes = sa.Column('attributes', sa.JSON)
-
-    queue = relationship('Queue', back_populates='players')
-    match = relationship('Match', back_populates='players')
-'''
-
 class AdCampaign(Base):
     __tablename__ = 'ad_campaigns'
 
@@ -41,14 +25,7 @@ class AdCampaign(Base):
 
     ad_groups = relationship("AdGroup", back_populates="ad_campaign")
 
-    '''
-    def __init__(self, name:str, start_date:datetime, end_date:datetime, budget:float):
-        self.name = name
-        self.start_date = start_date
-        self.end_date = end_date
-        self.budget = budget
-        self.status = 'CREATED'
-    '''
+
 class AdGroup(Base):
     __tablename__ = 'ad_groups'
 
