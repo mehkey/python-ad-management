@@ -18,11 +18,8 @@ router = APIRouter(
 async def create_ad_campaign(ad_campaign: schemas.AdCampaignCreate, session: Session = Depends(get_session)):
     ad_campaign.status = 'CREATED'
     resp= AllServices.AdCampaignService(session).add(ad_campaign)
-    #print(resp)
-    #print(resp.__dict__)
-    #return resp
-    #return Response(content=resp, media_type='application/json')
-    return resp #JSONResponse(json.dumps(resp))#JSONResponse(resp) JSONResponse
+
+    return resp 
 
 
 @router.get(path='/ad-campaign/{campaign_id}', response_model=schemas.AdCampaign)
