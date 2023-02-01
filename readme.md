@@ -185,3 +185,9 @@ Example Result
     }
 ]
 ```
+
+
+## FAST API
+
+![FAST API](./image/fast.png)
+
