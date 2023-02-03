@@ -194,11 +194,5 @@ export PYTHONPATH=$PWD
 
 
 
-## [Front-End React NEXT Typescript](https://github.com/mehkey/react-typescript-ad-management)
+## [Front-End React Typescript](https://github.com/mehkey/react-typescript-ad-management)
 
-
-![./Screen1](./image/screen1.png)
-
-![./Screen2](./image/screen2.png)
-
-![./Screen3](./image/screen3.png)
