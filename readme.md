@@ -195,4 +195,3 @@ export PYTHONPATH=$PWD
 
 
 ## [Front-End React Typescript](https://github.com/mehkey/react-typescript-ad-management)
-
