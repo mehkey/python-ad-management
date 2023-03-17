@@ -23,10 +23,8 @@ The easiest way to get started with the api is to head over to the docs generate
    adgroup,
    ad
    Using the endpoint
-     `POST /queues`
-2. Add players to the queue using the `POST /players`. Each players can have a set of attributes (for example a rating) that can be used in the cost function.
-3. Call the `GET /players/{player_id}` endpoint to get the status of a player. When a player gets a match, its status will have the value `MATCHED`.
-4. Using the match id of a player, call the `GET /matches/{match_id}` endpoint to get the list of players in the matching.
+     `POST /campaigns`
+
 
 
 # API
